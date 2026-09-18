@@ -20,7 +20,7 @@
             height: 100vh;
             margin: 0;
         }
-        button {
+       button {
             background-color: #4CAF50; /* Botón verde */
             color: white;
             border: none;
@@ -32,23 +32,27 @@
         button:hover {
             background-color: #45a049;
         }
-            background-color: #1a1a1a; /* Fondo oscuro */
-            color: #ffffff; /* Texto blanco */
-            font-family: Arial, sans-serif;
-            text-align: center; /* Centramos todo */
-            padding-top: 50px;
-        }
-        button {
-            background-color: #4CAF50; /* Botón verde */
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 16px;
-            border-radius: 8px;
+
+        /* Estilo base para los botones de personajes con imagen */
+        .btn-personaje {
+            width: 120px;
+            height: 120px;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #ffffff;
+            border-radius: 12px;
             cursor: pointer;
+            margin: 10px;
+            color: #ffffff;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px #000;
         }
-        button:hover {
-            background-color: #45a049;
+
+        .btn-goku { background-image: url('goku.png'); }
+        .btn-krilin { background-image: url('krilin.png'); }
+        .btn-yamcha { background-image: url('yamcha.png'); }
+        }
+      
         }
     </style>
 </head>
