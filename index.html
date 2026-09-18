@@ -5,7 +5,8 @@
     <title>Prueba Juego</title>
 </head>
 <body>
-<!-- SECCIÓN 1: EL MENÚ -->
+
+    <!-- SECCIÓN 1: EL MENÚ -->
     <div id="menu">
         <h1>CriptoJuego Telegram</h1>
         <p>¡Bienvenido a la aventura!</p>
@@ -14,11 +15,13 @@
         <br><br>
         <button>Salir</button>
     </div>
+
     <!-- SECCIÓN 2: EL JUEGO (Empieza oculta) -->
     <div id="juego" style="display: none;">
         <h1>¡Partida en curso!</h1>
         <p>Aquí es donde empezará la acción.</p>
     </div>
+
     <script>
         function empezarJuego() {
             // Ocultamos el menú
@@ -28,5 +31,6 @@
             document.getElementById('juego').style.display = 'block';
         }
     </script>
+
 </body>
 </html>
