@@ -12,3 +12,26 @@
 <button>Salir</button>
 </body>
 </html>
+<!-- SECCIÓN 1: EL MENÚ -->
+    <div id="menu">
+        <h1>CriptoJuego Telegram</h1>
+        <p>¡Bienvenido a la aventura!</p>
+        <br>
+        <button onclick="empezarJuego()">Empezar</button>
+        <br><br>
+        <button>Salir</button>
+    </div>
+    <!-- SECCIÓN 2: EL JUEGO (Empieza oculta) -->
+    <div id="juego" style="display: none;">
+        <h1>¡Partida en curso!</h1>
+        <p>Aquí es donde empezará la acción.</p>
+    </div>
+    <script>
+        function empezarJuego() {
+            // Ocultamos el menú
+            document.getElementById('menu').style.display = 'none';
+            
+            // Mostramos la sección del juego
+            document.getElementById('juego').style.display = 'block';
+        }
+    </script>
