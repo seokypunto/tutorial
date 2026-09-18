@@ -41,8 +41,9 @@
     <div id="juego" style="display: none;">
         <h1>¡Partida en curso!</h1>
         <p>Aquí es donde empezará la acción.</p>
+        <br>
+        <button onclick="volverAlMenu()">Volver al menú</button>
     </div>
-
     <script>
         function empezarJuego() {
             // Ocultamos el menú
@@ -51,6 +52,11 @@
             // Mostramos la sección del juego
             document.getElementById('juego').style.display = 'block';
         }
+        function volverAlMenu() {
+            // Ocultamos la sección del juego
+            document.getElementById('juego').style.display = 'none';
+            // Volvemos a mostrar el menú principal
+            document.getElementById('menu').style.display = 'block';
     </script>
 
 </body>
