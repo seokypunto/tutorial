@@ -5,6 +5,33 @@
     <title>Prueba Juego</title>
 <style>
         body {
+            background-image: url ('https://i.pinimg.com/736x/c2/39/17/c23917fd598cc169709c6c003bf9cd08.jpg');
+            
+            /* Estas propiedades hacen que la imagen se adapte a toda la pantalla */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            
+            color: #ffffff; /* Texto blanco */
+            font-family: Arial, sans-serif;
+            text-align: center; /* Centramos todo */
+            padding-top: 50px;
+            height: 100vh;
+            margin: 0;
+        }
+        button {
+            background-color: #4CAF50; /* Botón verde */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
             background-color: #1a1a1a; /* Fondo oscuro */
             color: #ffffff; /* Texto blanco */
             font-family: Arial, sans-serif;
@@ -32,7 +59,7 @@
         <h1>CriptoJuego Telegram</h1>
         <p>¡Bienvenido a la aventura!</p>
         <br>
-        <button onclick="elegirheroe()">Elegir Heroe</button>
+        <button onclick="elegirHeroe()">Elegir Heroe</button>
         <br><br>
         <button>Salir</button>
     </div>
