@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <title>Prueba Juego</title>
 <style>
         body {
@@ -172,20 +173,37 @@
     </div>
 </div>
     <script>
-        function elegirHeroe() {
-            // Ocultamos el menú
-            document.getElementById('menu').style.display = 'none';
-            
-            // Mostramos la sección del juego
-            document.getElementById('juego').style.display = 'block';
-        }
-        function volverAlMenu() {
-            // Ocultamos la sección del juego
-            document.getElementById('juego').style.display = 'none';
-            // Volvemos a mostrar el menú principal
-            document.getElementById('menu').style.display = 'block';
-             }
-    </script>
+  // 1. Conexión a Supabase (cambia esto por tus datos reales de tu panel de Supabase)
+  const SUPABASE_URL = 'https://tu-proyecto.supabase.co';
+  const SUPABASE_ANON_KEY = 'tu-clave-anonima-de-supabase';
+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  // 2. Tu función actual modificada para guardar el héroe
+  async function elegirPersonaje(nombreHeroe) {
+      // Guardamos la elección en la tabla 'partidas' de Supabase
+      const { error } = await supabase
+          .from('partidas')
+          .upsert([
+              { user_id: 'jugador_1', heroe_elegido: nombreHeroe }
+          ], { onConflict: ['user_id'] });
+
+      if (error) {
+          console.log('Error al guardar:', error.message);
+          return;
+      }
+
+      // Ocultamos el menú y mostramos el juego (lo que ya hacías)
+      document.getElementById('menu').style.display = 'none';
+      document.getElementById('juego').style.display = 'block';
+  }
+
+  function volverAlMenu() {
+      // Ocultamos la sección del juego
+      document.getElementById('juego').style.display = 'none';
+      // Volvemos a mostrar el menú principal
+      document.getElementById('menu').style.display = 'block';
+  }
+  
 
 </body>
 </html>
