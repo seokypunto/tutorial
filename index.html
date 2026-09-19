@@ -67,15 +67,110 @@
         <button>Salir</button>
     </div>
 
-    <!-- SECCIÓN 2: EL JUEGO (Empieza oculta) -->
-    <div id="juego" style="display: none;">
-        <h1>¡Elige a tu Héroe!</h1>
-        <br>
-       <button class="btn-personaje btn-goku" onclick="elegirPersonaje('Goku')"></button>
-<button class="btn-personaje btn-krilin" onclick="elegirPersonaje('Krilin')"></button>
-<button class="btn-personaje btn-yamcha" onclick="elegirPersonaje('Yamcha')"></button>
-        <button onclick="volverAlMenu()">Volver al menú</button>
+<!-- ESTILOS NUEVOS PARA LAS TARJETAS DE PERSONAJES -->
+<style>
+    .contenedor-seleccion {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .tarjeta-personaje {
+        display: flex;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.6);
+        border: 2px solid #ffffff;
+        border-radius: 15px;
+        padding: 12px;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+        text-align: left;
+    }
+    .avatar-personaje {
+        width: 100px;
+        height: 100px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        border: 2px solid #ffcc00;
+        flex-shrink: 0;
+    }
+    .info-personaje {
+        margin-left: 15px;
+        flex-grow: 1;
+        color: #ffffff;
+    }
+    .info-personaje h3 {
+        margin: 0 0 5px 0;
+        font-size: 18px;
+        color: #ffcc00;
+    }
+    .info-personaje p {
+        margin: 0 0 10px 0;
+        font-size: 13px;
+        color: #dddddd;
+    }
+    .btn-elegir {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .btn-elegir:hover {
+        background-color: #218838;
+    }
+    .avatar-goku { background-image: url('img/goku.png'); }
+    .avatar-krilin { background-image: url('img/krilin.png'); }
+    .avatar-yamcha { background-image: url('img/yamcha.png'); }
+</style>
+
+<!-- SECCIÓN 2: PANTALLA DE SELECCIÓN TIPO TARJETA -->
+<div id="juego" style="display: none;">
+    <h1 style="color: white; text-align: center;">¡Elige a tu Héroe!</h1>
+    
+    <div class="contenedor-seleccion">
+        
+        <!-- Tarjeta Goku -->
+        <div class="tarjeta-personaje">
+            <div class="avatar-personaje avatar-goku"></div>
+            <div class="info-personaje">
+                <h3>Goku</h3>
+                <p>⚡ Kamehameha & Genkidama<br>💪 Luchador equilibrado</p>
+                <button class="btn-elegir" onclick="elegirPersonaje('Goku')">Seleccionar</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta Krilin -->
+        <div class="tarjeta-personaje">
+            <div class="avatar-personaje avatar-krilin"></div>
+            <div class="info-personaje">
+                <h3>Krilin</h3>
+                <p>🌀 Kienzan & Disco Destructor<br>🛡️ Agilidad y táctica</p>
+                <button class="btn-elegir" onclick="elegirPersonaje('Krilin')">Seleccionar</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta Yamcha -->
+        <div class="tarjeta-personaje">
+            <div class="avatar-personaje avatar-yamcha"></div>
+            <div class="info-personaje">
+                <h3>Yamcha</h3>
+                <p>🐺 Puño del Lobo & Sokidan<br>💥 Ataques sorpresa</p>
+                <button class="btn-elegir" onclick="elegirPersonaje('Yamcha')">Seleccionar</button>
+            </div>
+        </div>
+
     </div>
+
+    <br>
+    <div style="text-align: center;">
+        <button onclick="volverAlMenu()" style="padding: 10px 20px; border-radius: 8px; cursor: pointer;">Volver al menú</button>
+    </div>
+</div>
     <script>
         function elegirHeroe() {
             // Ocultamos el menú
